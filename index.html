@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/album.jpg">
+    <title>Evento de migmated — life's a mess</title>
+</head>
+<body>
+    <!-- Todo o popup -->
+    <div id="popup-structure" class="hidden">
+
+        <!-- Isso é pra escurescer um pouco o fundo da página, dando destaque ao popup. -->
+        <div class="darken-bg">
+
+            <!-- Isso envelopa ambos o cabeçalho e o corpo do popup. -->
+            <div class="whole-popup">
+
+                <!-- Esse é o cabeçalho do popup. -->
+                <div class="popuphead">
+                    <h1 id="popup-title">Placeholder</h1>
+                    <input type="button" value="Fechar" id="simpleBtn" onclick="closePopup()">
+                </div>
+                <hr>
+                <!-- Aqui fica o conteúdo do popup. (texto, imagens, etc.)-->
+                <div id="popup-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container principal -->
+    <div class="container">
+        <div class="left-aligned fadein">
+            <div class="album-preview">
+                <img src="assets/disco.webp" id="spinning-vinyl" alt="spinning vinyl">
+                <h3 id="song-preview">wish i could care less</h3>
+                <p id="song_duration">01:54</p>
+                <input type="button" value="Prever música" id="previewBtn">
+                <audio id="care-less" src="assets/care-less.mp3"></audio>
+            </div>
+            
+        </div>
+        
+        <div class="alert fadeout">
+            <img src="assets/headphone.png" alt="headphone">
+            <h2>Use fones de ouvido para melhor experiência!</h2> 
+        </div>
+
+        <div class="sidewaysbackground slidein">
+        </div>
+        <div class="right-aligned fadein">
+
+            <div>
+                <img src="assets/album.jpg" id="album-cover" alt="album cover">
+                <h3 id="album-name">life's a mess — migmated</h3>
+            </div>
+            <h2>Lançamento do álbum completo</h2>
+            <div class="countdown">
+                <div>
+                    <h1 id="dias">00</h1>
+                    <p>Dias</p>
+                </div>
+                <div>
+                    <h1 id="horas">00</h1>
+                    <p>Horas</p>
+                </div>
+                <div>
+                    <h1 id="minutos">00</h1>
+                    <p>Minutos</p>
+                </div>
+                <div>
+                    <h1 id="segundos">00</h1>
+                    <p>Segundos</p>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <input type="button" value="Saiba mais" id="simpleBtn" onclick="openPopup('more')">
+                <input type="button" value="Contate-me" id="simpleBtn" onclick="openPopup('contact')">
+            </div>
+        </div>
+    </div>
+
+    <script src="js.js"></script>
+</body>
+</html>

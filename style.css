@@ -1,0 +1,401 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* background-image: url('/assets/bg-contador.png');  */
+    background: linear-gradient(140deg,rgb(121, 54, 15) 0%, rgba(235, 140, 38, 1) 45%, rgba(171, 145, 73, 1) 75%);
+    /* background-image: url('./bg-contador.png'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    user-select: none;
+
+    overflow: hidden;
+
+    animation-name: showGradient;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+/* Popups */
+#popup-structure{
+    position: absolute;
+    z-index: 10;
+
+    width: 100%;
+    height: 100%;
+}
+
+.darken-bg{
+    background-color: #0000007b;
+    width: 100%;
+    height: 100%;
+}
+
+.whole-popup{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-self: center;
+
+    gap: 15px;
+
+    padding: 25px;
+    top: 15%;
+
+    width: calc(50vw + 180px);
+    height: calc(50vh + 180px);
+
+    background: linear-gradient(#1d1d1d, #000);
+    border: 3px solid #fefefe;
+    border-radius: 15px;
+}
+
+/* Popup - cabeçalho */
+.popuphead{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#popup-title{
+    font-size: 30pt;
+}
+
+/* Popup - corpo */
+#popup-body{
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    padding: 15px;
+    padding-top: 0px;
+    
+    width: 100%;
+    height: 100%;
+}
+    
+/* Popup - elementos */
+#popup-title{
+    font-size: 25pt;
+    margin-bottom: 10px;
+}
+
+#popup-p{
+    font-size: 13pt;
+    margin-bottom: 10px;
+}
+
+#popup-p-i{
+    font-size: 13pt;
+    margin-bottom: 10px;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+#popup-image{
+    width: 30%;
+    border-radius: 15px;
+}
+
+#popup-flexdiv-left{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 25px;
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#popup-flexdiv-right{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: right;
+    gap: 25px;
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+
+/* Resto da página */
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100vh;
+
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.sidewaysbackground{
+    position: absolute;
+    background-color: #080808;
+    box-shadow: 5px 10px 10px 10px #080808;
+    z-index: -10;
+    left: 100%;
+
+    width: 50%;
+    height: 150%;
+
+    transform: rotate(3deg);
+}
+
+.alert{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+
+    left: 66%;
+    top: 30%;
+
+    width: 350px;
+    height: 300px;
+    padding: 50px;
+}
+
+
+.right-aligned{
+    display: flex;
+    align-content: center;
+    text-align: center;
+    flex-direction: column;
+    opacity: 0;
+
+    width: 50%;
+    height: 100vh;
+    padding: 50px;
+}
+
+.left-aligned{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+
+    width: 50%;
+    height: 100vh;
+}
+
+#spinning-vinyl{
+    width: 250px;
+    transition: .2s ease-out;
+}
+
+#album-cover{
+    width: 250px;
+    align-self: center;
+    margin: 50px;
+    margin-bottom: 10px;
+}
+
+#album-name{
+    font-style: italic;
+    color: #ffffff8e;
+    margin-bottom: 50px;
+}
+
+.album-preview{
+    justify-items: center;
+    align-items: center;
+}
+
+.album-preview{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #080808;
+    width: 350px;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+h3{
+    font-size: 20px;
+}
+
+input{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.title {
+    font-size: calc(10px + 3vw);
+}
+
+.title p {
+    font-size: calc(10px + 1vw);
+}
+
+#previewBtn{
+    background-color: #ffffff00;
+    border-color: white;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 15px;
+
+    color: white;
+
+    padding-left: 15px;
+    padding-top: 8px;
+    padding-right: 15px;
+    padding-bottom: 8px;
+
+    transition: .1s ease-in-out;
+}
+
+#previewBtn:hover{
+    background-color: #ffffff9f;
+    border-color: white;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 15px;
+
+    color: rgb(22, 21, 21);
+
+    padding-left: 15px;
+    padding-top: 8px;
+    padding-right: 15px;
+    padding-bottom: 8px;
+
+    transform: scale(1.1);
+}
+
+div.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+
+    width: 50%;
+    gap: 15px;
+}
+
+#simpleBtn{
+    padding: 15px;
+    background-color: #ffffff00;
+    color: #fff;
+    border: 3px solid #fff;
+    border-radius: 15px;
+
+    transition: 0.2s ease-in-out;
+}
+
+#simpleBtn:hover{
+    padding: 15px;
+    background-color: #ffffff9f;
+    color: rgb(22,21,21);
+    border: 3px solid #fff;
+    border-radius: 15px;
+
+    transform: scale(1.1);
+}
+
+/* Contador */
+#dias, #horas, #minutos, #segundos{
+    font-size: calc(10px + 8vh);
+    text-shadow: 0 0 10px  whitesmoke;
+}
+
+.countdown{
+    display: flex;
+    width: 75%;
+    height: 250px;
+    justify-content: space-between;
+    align-self: center;
+    flex-wrap: wrap;
+}
+
+/* Estados */
+.hidden{
+    opacity: 0;
+    pointer-events: none;
+    transition: .5s ease-in-out;
+}
+
+.shown{
+    opacity: 1;
+    pointer-events: all;
+    transition: .5s ease-in-out;
+}
+
+/* animações */
+.spin{
+    animation-name: spin;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-duration: 30s;
+}
+
+.fadein{
+    animation-name: fadein;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    animation-duration: .5s;
+    pointer-events: all;
+}
+
+.fadeout{
+    animation-name: fadeout;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    animation-duration: .5s;
+    pointer-events: none;
+}
+
+.slidein{
+    animation-name: slidein;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-delay: .5;
+    animation-duration: 2s;
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    } 100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadein{
+    from{
+        opacity: 0;
+    } to{
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout{
+    from{
+        opacity: 1;
+    } to{
+        opacity: 0;
+    }
+}
+
+@keyframes slidein{
+    from{
+        left: 100%;
+    } to {
+        left: 51%;
+    }
+}
