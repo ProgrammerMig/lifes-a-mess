@@ -14,7 +14,6 @@
 
         <!-- Isso é pra escurescer um pouco o fundo da página, dando destaque ao popup. -->
         <div class="darken-bg">
-
             <!-- Isso envelopa ambos o cabeçalho e o corpo do popup. -->
             <div class="whole-popup">
 
@@ -40,7 +39,8 @@
                 <h3 id="song-preview">wish i could care less</h3>
                 <p id="song_duration">01:54</p>
                 <input type="button" value="Prever música" id="previewBtn">
-                <audio id="care-less" src="assets/care-less.mp3"></audio>
+                <audio id="care-less" src="assets/care-less.mp3" onended="stopVinyl()"
+                ></audio>
             </div>
             
         </div>
@@ -52,6 +52,9 @@
 
         <div class="sidewaysbackground slidein">
         </div>
+
+        <canvas></canvas>
+
         <div class="right-aligned fadein">
 
             <div>
