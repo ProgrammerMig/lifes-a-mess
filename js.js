@@ -63,6 +63,7 @@ function stopVinyl(){
 
 button.addEventListener('click', () => {
     if (song.paused) {
+        song.load()
         song.play()
             .then(() => {
                 vinyl.classList.add('spin');
