@@ -51,30 +51,37 @@ if (elementoContador) {
 }
 
 // Prever música
-let song = document.getElementById('care-less')
-let button = document.getElementById('previewBtn')
-let vinyl = document.getElementById('spinning-vinyl')
-let tocando = false
+let song = document.getElementById('care-less');
+let button = document.getElementById('previewBtn');
+let vinyl = document.getElementById('spinning-vinyl');
 
 function stopVinyl(){
-    vinyl.classList.remove('spin')
-    vinyl.style.transform = `rotate(0deg)`
-    button.value = 'Prever música'
+    vinyl.classList.remove('spin');
+    vinyl.style.transform = `rotate(0deg)`;
+    button.value = 'Prever música';
 }
 
 button.addEventListener('click', () => {
-    if(!tocando){
+    if (song.paused) {
         song.play()
-        vinyl.classList.add('spin')
-        button.value = 'Pausar prévia'
-        
+            .then(() => {
+                vinyl.classList.add('spin');
+                button.value = 'Pausar prévia';
+            })
+            .catch(error => {
+                console.error("O navegador bloqueou ou o áudio não carregou:", error);
+                alert("Clique na página antes de reproduzir ou verifique se o arquivo existe no servidor.");
+            });
     } else {
-        song.pause()
-        vinyl.classList.remove('spin')
-        button.value = 'Prever música'
+        song.pause();
+        vinyl.classList.remove('spin');
+        button.value = 'Prever música';
     }
-    tocando = !tocando;
-})
+});
+
+song.addEventListener('ended', () => {
+    stopVinyl();
+});
 
 // Popups
 entirepopup = document.getElementById("popup-structure")
